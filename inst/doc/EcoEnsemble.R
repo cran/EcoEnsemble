@@ -1,7 +1,7 @@
 ## ----include=FALSE------------------------------------------------------------
 #Load in the data and load the library
 library(EcoEnsemble)
-load("data/vignette_plots.Rdata")
+#load("data/vignette_plots.Rdata")
 
 ## ----label="Observations"-----------------------------------------------------
 SSB_obs
@@ -97,7 +97,7 @@ priors_custom <- EnsemblePrior(
 #  plot(samples)
 
 ## ----fig.dim = c(7, 4), echo=FALSE, warning = FALSE---------------------------
-plot_initial_outputs
+knitr::include_graphics("data/plot_initial_outputs.png")
 
 ## ---- label = "Initial_plots_changed", fig.dim = c(7, 4), eval=FALSE----------
 #  plot(samples, variable = "Cod", quantiles = c(0.25, 0.75)) +
@@ -106,7 +106,7 @@ plot_initial_outputs
 #      ggplot2::ylab("SSB (log tonnes)")
 
 ## ----fig.dim = c(7, 4), echo=FALSE, warning = FALSE---------------------------
-plot_initial_customised
+knitr::include_graphics("data/plot_initial_customised.png")
 
 ## ----visualise_priors, eval= FALSE--------------------------------------------
 #  prior_model <- prior_ensemble_model(priors = priors, M = 4)
@@ -122,7 +122,7 @@ plot_initial_customised
 #  plot(prior_samples)
 
 ## ----fig.dim = c(7, 6), echo = FALSE, warning = FALSE-------------------------
-plot_priors_only
+knitr::include_graphics("data/plot_priors_only.png")
 
 ## ---- label = "create_data_manual"--------------------------------------------
 ens_data <- EnsembleData(observations = list(SSB_obs, Sigma_obs),

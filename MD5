@@ -1,4 +1,4 @@
-c38b4c200329dd37436d9e3cf05c00cd *DESCRIPTION
+6dbd95dfe5345b3cb2274ef34a1b9cda *DESCRIPTION
 4e35c6771dfb9662ea0fce7a5e0a8278 *NAMESPACE
 13a1bba3b4d6a82b53fc2b18376d30f2 *NEWS.md
 c957b9fc7088683a131682ed546dfd79 *R/DiscrepancyPrior-IndLTPrior-class.R
@@ -26,12 +26,12 @@ f11aa0eebe24f0c7108f096714cc8879 *build/vignette.rds
 1cc60bdd8610449d30184e0bb374bf46 *configure
 363506993327ae3b7de4216fa3a1aa2b *configure.win
 c669264ca6728aeb7158c095ebac44d8 *data/northseamsy.RData
-c2185a74da7f4e44bdf9e72247d9db88 *inst/doc/EcoEnsemble.R
-3bd184580082489d4029706d6b79cf0f *inst/doc/EcoEnsemble.Rmd
-a2dd87dc4a2f08ef83a2acac2f4a37a1 *inst/doc/EcoEnsemble.html
+8ba6259960f7c5951d18f0440896d677 *inst/doc/EcoEnsemble.R
+bb4a949bb6b03ea00844950a859df129 *inst/doc/EcoEnsemble.Rmd
+bf9cb227c263a72bf0d4e7bb19b23a25 *inst/doc/EcoEnsemble.html
 350f3a7c64bb7b1632d21b314597c7e5 *inst/doc/ExploringPriors.R
 90016e7423aaa376911cdfdf6992fedb *inst/doc/ExploringPriors.Rmd
-431430503deb7fd3c255c50b517054e0 *inst/doc/ExploringPriors.html
+b51497c8c8478fe1fa120e8e46eb6b56 *inst/doc/ExploringPriors.html
 a5748ef942d88806f4d83ab4e6a368d8 *inst/doc/SyntheticData.R
 401ff1ef42cd4fd181b87c46dc9058bf *inst/doc/SyntheticData.Rmd
 63bb6b8191b0a67411e8c3be1de0f1c6 *inst/doc/SyntheticData.html
@@ -76,7 +76,7 @@ cbf5889af2b45914d3fb2a527523856d *src/KF_back.cpp
 8f19443587b6acc6eb41793b7e3e15f9 *tests/testthat.R
 f0432286a17860abc804c89f4440e718 *tests/testthat/test-prior_functions.R
 999c0b86d274f107ab126089ef31e44d *tests/testthat/test-validation_functions.R
-3bd184580082489d4029706d6b79cf0f *vignettes/EcoEnsemble.Rmd
+bb4a949bb6b03ea00844950a859df129 *vignettes/EcoEnsemble.Rmd
 90016e7423aaa376911cdfdf6992fedb *vignettes/ExploringPriors.Rmd
 401ff1ef42cd4fd181b87c46dc9058bf *vignettes/SyntheticData.Rmd
 eb3f6738790966c70902afe59b4d918b *vignettes/data/ExploringPriors_HierBetaDensities.RData
@@ -86,4 +86,6 @@ e82339d246a521a99b384e775527ad69 *vignettes/data/ExploringPriors_invWishartDensi
 15f31f137cf4b8ad8a260d40321c2da7 *vignettes/data/SyntheticData_AddingModelsData.RData
 4fb28c0eb23d75308c9addae7336d1b6 *vignettes/data/SyntheticData_Plots.RData
 a66ae781627d8852516d74d10747b300 *vignettes/data/SyntheticData_PriorSamples.RData
-0f75db50da6a9245086eeb1bb03c9595 *vignettes/data/vignette_plots.Rdata
+99bffde9ceef8e75b415d70d08a34659 *vignettes/data/plot_initial_customised.png
+54605302a4296c8136f4bae8fd45edbf *vignettes/data/plot_initial_outputs.png
+25834460c664312b0dfa7a560e572c34 *vignettes/data/plot_priors_only.png
