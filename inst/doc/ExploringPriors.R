@@ -188,7 +188,5 @@ hist(rbeta(1e5,2,2)*2 - 1,probability = T,xlab=expression(r["k,i"]),main="")
 #  plot(samples)
 
 ## ----echo =FALSE,fig.dim=c(7,6)-----------------------------------------------
-load("data/ExploringPriors_PriorPredictivePlot.RData")
-p_priors
-par(def.par)
+knitr::include_graphics("data/p_priors.png")
 

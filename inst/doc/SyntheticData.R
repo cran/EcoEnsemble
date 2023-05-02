@@ -153,8 +153,7 @@ dimnames(cov_model_4) <- list(SPECIES_NAMES, SPECIES_NAMES)
 #  
 
 ## ----plot_truth, echo = FALSE, fig.dim = c(7, 4)------------------------------
-load("data/SyntheticData_Plots.RData")
-p_truth
+knitr::include_graphics("data/p_truth.png")
 
 ## ----eval = FALSE-------------------------------------------------------------
 #  fit_M1 <- fit_ensemble_model(observations = list(val_obs, cov_obs),
@@ -185,7 +184,7 @@ p_truth
 #    plot(samples   , variable=1) + ggtitle("4 Models") + theme(legend.position = "none"))
 
 ## ----model_comparison, echo = FALSE, fig.dim = c(7, 6)------------------------
-p_NumberOfModels
+knitr::include_graphics("data/p_NumberOfModels.png")
 
 ## ----quantify_variance, eval = FALSE------------------------------------------
 #  def.par <- par(no.readonly=TRUE) #old pars

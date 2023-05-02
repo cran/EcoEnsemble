@@ -12,7 +12,7 @@
 
 <meta name="author" content="James A. Martindale and Michael A. Spence" />
 
-<meta name="date" content="2023-03-29" />
+<meta name="date" content="2023-05-02" />
 
 <title>EcoEnsemble</title>
 
@@ -357,7 +357,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">EcoEnsemble</h1>
 <h3 class="subtitle">An R package for combining ecosystem models</h3>
 <h4 class="author">James A. Martindale and Michael A. Spence</h4>
-<h4 class="date">2023-03-29</h4>
+<h4 class="date">2023-05-02</h4>
 
 
 
@@ -376,8 +376,8 @@ the simulators individually (<span class="citation">Rougier
 <p>Management decisions on the basis of a single simulator are therefore
 very sensitive to the choice of simulator ( <span class="citation">Collie et al. (2016)</span>, <span class="citation">Essington and Plaganyi (2013)</span>, <span class="citation">Fulton, Smith, and Johnson (2003)</span>, <span class="citation">Hart and Fay (2020)</span>, <span class="citation">Gaichas (2008)</span>) and by ignoring other available
 simulators, we limit the amount of information utilised and increase our
-uncertainty (<span class="citation">M. A. Spence et al. (2018)</span>),
-often to a greater extent than we formally recognise.</p>
+uncertainty (<span class="citation">Spence et al. (2018)</span>), often
+to a greater extent than we formally recognise.</p>
 <p>Instead of choosing one simulator, it is possible to combine them
 using an ensemble model. However, many such methods, such as weighting
 schemes (e.g. Bayesian model averaging, <span class="citation">Banner
@@ -393,7 +393,7 @@ ensemble despite the additional information contained in the new model
 (<span class="citation">Dormann, et al. (2018)</span>). For an ensemble
 model with a robust quantification of uncertainty, uncertainty should
 decrease as simulators are added (or at worst stay the same).</p>
-<p><span class="citation">M. A. Spence et al. (2018)</span> developed an
+<p><span class="citation">Spence et al. (2018)</span> developed an
 ensemble model treating individual simulators as exchangeable and drawn
 from a population of possible simulators. They separated each individual
 simulator’s discrepancy into a discrepancy shared between the simulators
@@ -406,9 +406,8 @@ weaknesses of each individual simulator (<span class="citation">Chandler
 (2013)</span>), whilst robustly quantifying the uncertainty allowing for
 more accurate advice.</p>
 <p><code>EcoEnsemble</code> is an <code>R</code> package that implements
-the ensemble model of <span class="citation">M. A. Spence et al.
-(2018)</span> when the simulators either output the quantity of interest
-or not.</p>
+the ensemble model of <span class="citation">Spence et al. (2018)</span>
+when the simulators either output the quantity of interest or not.</p>
 </div>
 <div id="model-description" class="section level1">
 <h1>Model description</h1>
@@ -419,9 +418,8 @@ with <span class="math inline">\(n_k\)</span> outputs each relating to
 one of the variables of interest, for <span class="math inline">\(k=1,\ldots,m\)</span>, and noisy observations of
 the variables of interest, <span class="math inline">\(\hat{\mathbf{y}}^{(t)}=(\hat{y}_1^{(t)},\ldots,\hat{y}_d^{(t)})&#39;\)</span>.</p>
 <p>Not all of the simulators output all the variables over the whole
-time period. To accommodate these differences, <span class="citation">M.
-A. Spence et al. (2018)</span> introduced a latent variable, known as
-the “best guess”, <span class="math inline">\(\mathbf{x}_{k}^{(t)}=({x}_{1}^{(t)},\ldots,{x}_{d}^{(t)})&#39;\)</span>,
+time period. To accommodate these differences, <span class="citation">Spence et al. (2018)</span> introduced a latent
+variable, known as the “best guess”, <span class="math inline">\(\mathbf{x}_{k}^{(t)}=({x}_{1}^{(t)},\ldots,{x}_{d}^{(t)})&#39;\)</span>,
 which represents simulator <span class="math inline">\(k\)</span>’s
 output if it described all <span class="math inline">\(d\)</span>
 variables at time <span class="math inline">\(t\)</span> with no
@@ -643,8 +641,8 @@ size-dependent predation and maturation processes (<span class="citation">Blanch
 species from 1984 until 2050, in the variable <code>SSB_miz</code>,
 meaning that <span class="math inline">\(n_3=4\)</span> and <span class="math inline">\(M_3=I_4\)</span>. The covariance of the mizer’s
 output, <span class="math inline">\(\Sigma_{3}\)</span>, was calculated
-in <span class="citation">Michael A. Spence, Blackwell, and Blanchard
-(2016)</span> and is stored in the variable <code>Sigma_miz</code>,</p>
+in <span class="citation">Spence, Blackwell, and Blanchard (2016)</span>
+and is stored in the variable <code>Sigma_miz</code>,</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Sigma_miz</span></code></pre></div>
 <pre><code>##                N.pout       Herring          Cod          Sole
 ## N.pout   0.3024728305  0.0324192572 -0.001061507  0.0003276015
@@ -665,7 +663,7 @@ not output Sole), from 1984 until 2050, in the variable
     0 &amp; 0 &amp; 1 &amp; 0
     \end{pmatrix}.
 \end{equation}\]</span></p>
-<p>The covariance of the FishSUMS’ output, <span class="math inline">\(\Sigma_{4}\)</span>, was calculated in <span class="citation">M. A. Spence et al. (2018)</span> and is stored in the
+<p>The covariance of the FishSUMS’ output, <span class="math inline">\(\Sigma_{4}\)</span>, was calculated in <span class="citation">Spence et al. (2018)</span> and is stored in the
 variable <code>Sigma_fs</code>. Its value is</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Sigma_fs</span></code></pre></div>
 <pre><code>##               N.pout      Herring           Cod
@@ -702,7 +700,7 @@ interpretation of each is different. In particular, the <span class="math inline
 dynamic auto-regressive process across time, while <span class="math inline">\(C_\gamma\)</span> is the covariance of the
 distribution of static long-term discrepancies across different
 simulators.</p>
-<p>In <code>EcoEnsemble</code>, we follow the approach of <span class="citation">M. A. Spence et al. (2018)</span> and decompose the
+<p>In <code>EcoEnsemble</code>, we follow the approach of <span class="citation">Spence et al. (2018)</span> and decompose the
 covariance matrices into correlation matrices and a diagonal matrix of
 variances, i.e. </p>
 <p><span class="math display">\[\begin{equation}
@@ -764,7 +762,7 @@ encodes that the standard deviation of this Gaussian prior is
 <p>The ensemble model parameters are fit using the
 <code>fit_ensemble_model</code> function, which converts the data into
 the required form. Hamiltonian Monte Carlo then samples from the
-posterior distribution using the <code>rstan</code> package <span class="citation">Stan Development Team (n.d.)</span>. A sample of the
+posterior distribution using the <code>rstan</code> package <span class="citation">Stan Development Team (2020)</span>. A sample of the
 ensemble parameters can then be generated using the
 <code>generate_sample</code> function.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fit_sample <span class="ot">&lt;-</span> <span class="fu">fit_ensemble_model</span>(<span class="at">observations =</span> <span class="fu">list</span>(SSB_obs, Sigma_obs),</span>
@@ -792,7 +790,7 @@ default these are the 5% and 95% quantiles).</p>
 <p>We can change which variable we plot by passing through a
 <code>variable</code> option, and are free to change the aesthetics in
 the same way as other <code>ggplot2</code> plots, see the ggplot manual
-<span class="citation">Wickham (n.d.)</span>. Different quantiles can
+<span class="citation">Wickham (2016)</span>. Different quantiles can
 also be specified with the quantiles option, e.g.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(samples, <span class="at">variable =</span> <span class="st">&quot;Cod&quot;</span>, <span class="at">quantiles =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>)) <span class="sc">+</span> </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
@@ -871,7 +869,7 @@ for Assessing Model Averaging of Regression Coefficients.”</span>
 <em>Ecological Applications</em> 27: 78–93.
 </div>
 <div id="ref-blanchard" class="csl-entry">
-Blanchard, Julia L., NA, Ken H. rsen, Finlay Scott, Niels T. Hintzen,
+Blanchard, Julia L., Ken H. Andersen, Finlay Scott, Niels T. Hintzen,
 Gerjan Piet, and Simon Jennings. 2014. <span>“Evaluating Targets and
 Trade-Offs Among Fisheries and Conservation Objectives Using a
 Multispecies Size Spectrum Model.”</span> <em>Journal of Applied
@@ -958,20 +956,21 @@ Speirs, Douglas C., Simon P.R. Greenstreet, and Michael R. Heath. 2016.
 <span>“Modelling the Effects of Fishing on the North Sea Fish Community
 Size Composition.”</span> <em>Ecological Modelling</em> 321: 35–45.
 </div>
-<div id="ref-spence_ff" class="csl-entry">
-Spence, M.A., J.L. Blanchard, A.G. Rossberg, M.R. Heath, J.J. Heymans,
-S. Mackinson, N. Serpetti, D.C. Speirs, R.B. Thorpe, and P.G. Blackwell.
-2018. <span>“A General Framework for Combining Ecosystem Models.”</span>
-<em>Fish and Fisheries</em> 19: 1013–42.
-</div>
 <div id="ref-spence_ns" class="csl-entry">
 Spence, Michael A., Paul G. Blackwell, and Julia L. Blanchard. 2016.
 <span>“Parameter Uncertainty of a Dynamic Multispecies Size Spectrum
 Model.”</span> <em>Canadian Journal of Fisheries and Aquatic
 Sciences</em> 73: 589–97.
 </div>
+<div id="ref-spence_ff" class="csl-entry">
+Spence, Michael A., Julia L. Blanchard, Axel G. Rossberg, Michael R.
+Heath, J. J. Heymans, Steven Mackinson, Natalia Serpetti, Douglas C.
+Speirs, Robert B. Thorpe, and Paul G. Blackwell. 2018. <span>“A General
+Framework for Combining Ecosystem Models.”</span> <em>Fish and
+Fisheries</em> 19: 1013–42.
+</div>
 <div id="ref-rstan" class="csl-entry">
-Stan Development Team. n.d. <span>“RStan: The R Interface to
+Stan Development Team. 2020. <span>“RStan: The R Interface to
 Stan.”</span> <a href="https://mc-stan.org/">https://mc-stan.org/</a>.
 </div>
 <div id="ref-thorpe15" class="csl-entry">
@@ -982,7 +981,7 @@ Community Responses to Fishing.”</span> <em>Methods in Ecology and
 Evolution</em> 6: 49–58.
 </div>
 <div id="ref-ggplot" class="csl-entry">
-Wickham, Hadley. n.d. <em>Ggplot2: Elegant Graphics for Data
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data
 Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 </div>

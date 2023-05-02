@@ -1,7 +1,7 @@
 ---
 title: "Exploring priors"
 author: "Michael A. Spence, James A. Martindale and Michael J. Thomson"
-date: "2022-09-06"
+date: "2023-04-24"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{ExploringPriors}
@@ -383,9 +383,7 @@ samples <- sample_prior(observations = list(SSB_obs, Sigma_obs),
 plot(samples)
 ```
 ```{r echo =FALSE,fig.dim=c(7,6)}
-load("data/ExploringPriors_PriorPredictivePlot.RData")
-p_priors
-par(def.par)
+knitr::include_graphics("data/p_priors.png")
 ```
 
 # References
