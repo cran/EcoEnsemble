@@ -84,7 +84,7 @@ priors_custom <- EnsemblePrior(
                         sha_st_params = ShaSTPrior("lkj", list(25, 0.25), 30),
                         sha_lt_params = 3)
 
-## ---- label = "fit", eval=FALSE-----------------------------------------------
+## ----label = "fit", eval=FALSE------------------------------------------------
 #  fit_sample <- fit_ensemble_model(observations = list(SSB_obs, Sigma_obs),
 #                                   simulators = list(list(SSB_ewe, Sigma_ewe, "EwE"),
 #                                                     list(SSB_lm,  Sigma_lm,  "LeMans"),
@@ -93,13 +93,13 @@ priors_custom <- EnsemblePrior(
 #                                   priors = priors)
 #  samples <- generate_sample(fit_sample)
 
-## ---- label = "Initial_plots", eval=FALSE-------------------------------------
+## ----label = "Initial_plots", eval=FALSE--------------------------------------
 #  plot(samples)
 
 ## ----fig.dim = c(7, 4), echo=FALSE, warning = FALSE---------------------------
 knitr::include_graphics("data/plot_initial_outputs.png")
 
-## ---- label = "Initial_plots_changed", fig.dim = c(7, 4), eval=FALSE----------
+## ----label = "Initial_plots_changed", fig.dim = c(7, 4), eval=FALSE-----------
 #  plot(samples, variable = "Cod", quantiles = c(0.25, 0.75)) +
 #      ggplot2::theme_classic() +
 #      ggplot2::scale_color_brewer(palette="Set2")  +
@@ -124,7 +124,7 @@ knitr::include_graphics("data/plot_initial_customised.png")
 ## ----fig.dim = c(7, 6), echo = FALSE, warning = FALSE-------------------------
 knitr::include_graphics("data/plot_priors_only.png")
 
-## ---- label = "create_data_manual"--------------------------------------------
+## ----label = "create_data_manual"---------------------------------------------
 ens_data <- EnsembleData(observations = list(SSB_obs, Sigma_obs),
                           simulators = list(list(SSB_ewe, Sigma_ewe, "EwE"),
                                             list(SSB_lm,  Sigma_lm,  "LeMans"),
@@ -133,18 +133,18 @@ ens_data <- EnsembleData(observations = list(SSB_obs, Sigma_obs),
                           priors = priors)
 
 
-## ---- label = "fitting_ensemble_DIY", eval=FALSE------------------------------
-#  mod <- get_mcmc_ensemble_model()
+## ----label = "fitting_ensemble_DIY", eval=FALSE-------------------------------
+#  mod <- get_mcmc_ensemble_model(priors)
 #  samples <- rstan::sampling(mod, data = ens_data@stan_input)
 #  fit <- EnsembleFit(ens_data, samples = samples)
 
-## ---- eval = FALSE------------------------------------------------------------
+## ----eval = FALSE-------------------------------------------------------------
 #  # Generating samples using DIY functions
 #  transf_data <- get_transformed_data(fit)
 #  mle_sample <- gen_sample(1, ex.fit = rstan::extract(samples), transformed_data = transf_data,
 #                           time = ens_data@stan_input$time)
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  fit <- fit_ensemble_model(observations = observations, simulators = simulators,
 #                            priors = priors)
 #  samples_tmp <- generate_sample(fit)

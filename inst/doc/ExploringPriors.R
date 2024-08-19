@@ -1,4 +1,4 @@
-## ---- echo=FALSE,warning=FALSE,error=FALSE,message=FALSE----------------------
+## ----echo=FALSE,warning=FALSE,error=FALSE,message=FALSE-----------------------
 library(rstan)
 library(EcoEnsemble)
 
