@@ -1,6 +1,6 @@
 Package: EcoEnsemble
 Title: A General Framework for Combining Ecosystem Models
-Version: 1.1.0
+Version: 1.1.2
 Authors@R: 
     c(person(given = "Michael A.",
                 family = "Spence",
@@ -14,7 +14,10 @@ Authors@R:
             person(given = "Michael J.",
                 family = "Thomson",
                 role = c("aut"),
-                comment = c(ORCID = "0000-0003-0284-0129")))
+                comment = c(ORCID = "0000-0003-0284-0129")),
+            person(given = "Thomas I. J.",
+                family = "Bartos",
+                role = c("aut")))
 Description: Fit and sample from the ensemble model described in Spence et al (2018): "A general framework for combining ecosystem models"<doi:10.1111/faf.12310>.
 License: GPL (>= 3)
 Encoding: UTF-8
@@ -48,10 +51,11 @@ Collate: 'DiscrepancyPrior-IndLTPrior-class.R'
         'validation_functions_withdrivers.R'
         'validation_prior_functions.R'
 NeedsCompilation: yes
-Packaged: 2024-08-19 15:39:12 UTC; tb16
+Packaged: 2025-03-18 16:48:05 UTC; MS23
 Author: Michael A. Spence [aut, cre] (<https://orcid.org/0000-0002-3445-7979>),
   James A. Martindale [aut] (<https://orcid.org/0000-0002-1913-5592>),
-  Michael J. Thomson [aut] (<https://orcid.org/0000-0003-0284-0129>)
+  Michael J. Thomson [aut] (<https://orcid.org/0000-0003-0284-0129>),
+  Thomas I. J. Bartos [aut]
 Maintainer: Michael A. Spence <michael.spence@cefas.gov.uk>
 Repository: CRAN
-Date/Publication: 2024-08-19 17:20:06 UTC
+Date/Publication: 2025-03-18 18:20:02 UTC

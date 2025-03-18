@@ -66,7 +66,7 @@ set.seed(5678)
 #  plot_df$Value <- as.numeric(plot_df$Value)
 #  bgplot <- ggplot2::ggplot(plot_df) + geom_line(data = plot_df[which(plot_df$Type == "sim"),], aes(x = Year, y = Value, color = Simulator, linetype = Driver), linewidth = 0.8) + geom_line(data = plot_df[which(plot_df$Type == "truth"),], aes(x = Year, y = Value), linewidth = 1, color = "purple")
 
-## ----echo = FALSE, out.width="500px", out.height="500px"----------------------
+## ---- echo = FALSE, out.width="500px", out.height="500px"---------------------
 knitr::include_graphics("data/bgplot.png")
 
 ## ----add_noise, eval = FALSE--------------------------------------------------
@@ -104,10 +104,10 @@ knitr::include_graphics("data/bgplot.png")
 #  plot_df$Value <- as.numeric(plot_df$Value)
 #  obsplot <- ggplot(plot_df) + geom_line(data=plot_df[which(plot_df$Type == "sim"),], aes(x = Year, y = Value, color = Simulator, linetype = Driver), linewidth = 0.8) + geom_point(data = plot_df[intersect(which(plot_df$Type == "truth"),which(plot_df$Obs_Status == "observed")),], aes(x = Year, y = Value), color = "purple")
 
-## ----echo = FALSE, out.width="500px", out.height="500px"----------------------
+## ---- echo = FALSE, out.width="500px", out.height="500px"---------------------
 knitr::include_graphics("data/obsplot.png")
 
-## ----eval = FALSE-------------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  #Create the data frames that we'll use for EcoEnsemble
 #  val_obs <- data.frame(obs); cov_obs <- obs.cov
 #  val_model_11 <- data.frame(models_output[1,,]); cov_model_11 <- model.cov[1,,]
@@ -178,7 +178,7 @@ knitr::include_graphics("data/obsplot.png")
 ## ----plot_truth, echo = FALSE, out.width="600px", out.height="600px"----------
 knitr::include_graphics("data/output_plot.png")
 
-## ----eval = FALSE-------------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  samples_array <- as.array(fit@samples)
 #  #Drop last element of third dimension as this is "lp__"
 #  max(apply(samples_array[,,-dim(samples_array)[3]], 3, rstan::Rhat), na.rm = TRUE)
@@ -188,16 +188,16 @@ knitr::include_graphics("data/output_plot.png")
 ## ----echo=FALSE---------------------------------------------------------------
 1.007311; 836.737; 559.6022
 
-## ----eval = FALSE-------------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  rstan::check_divergences(fit@samples)
 
-## ----echo = FALSE-------------------------------------------------------------
+## ---- echo = FALSE------------------------------------------------------------
 message(sprintf("%s of %s iterations ended with a divergence (%s%%).", 
             5, 4000, 100 * 5/4000), "\nTry increasing 'adapt_delta' to remove the divergences.")
 
-## ----eval = FALSE, fig.dim = c(7,4)-------------------------------------------
+## ---- eval = FALSE, fig.dim = c(7,4)------------------------------------------
 #  rstan::traceplot(fit@samples, pars = "ind_st_sd[3,2]")
 
-## ----echo = FALSE, out.width = "500px", out.height = "300px"------------------
+## ---- echo = FALSE, out.width = "500px", out.height = "300px"-----------------
 knitr::include_graphics("data/drivers_trace.png")
 

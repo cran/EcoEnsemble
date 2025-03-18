@@ -90,19 +90,19 @@ set.seed(1234)
 #  rhoplot1 <- ggplot(rhoplot_data[which(rhoplot_data$k == kvals[1]),]) + geom_area(aes(x = rho, y = Density, color = Prior, fill = Prior), alpha = 0.3, position = "identity") + scale_x_continuous(bquote(rho), sec.axis = sec_axis(~., name = "r", breaks = NULL, labels = NULL)) + scale_y_continuous(sec.axis = sec_axis(~., name = "s", breaks = NULL, labels = NULL)) + theme(aspect.ratio = 1) + facet_grid(rows = vars(r), cols = vars(s)) + scale_color_manual(values = c("blue", "green")) + scale_fill_manual(values = c("blue", "green"))
 #  rhoplot2 <- ggplot(rhoplot_data[which(rhoplot_data$k == kvals[2]),], aes(x = rho, y = Density)) + geom_area(aes(color = Prior, fill = Prior), alpha = 0.3, position = "identity") + scale_x_continuous(bquote(rho), sec.axis = sec_axis(~., name = "r", breaks = NULL, labels = NULL)) + scale_y_continuous(sec.axis = sec_axis(~., name = "s", breaks = NULL, labels = NULL)) + theme(aspect.ratio = 1) + facet_grid(rows = vars(r), cols = vars(s)) + scale_color_manual(values = c("blue", "green")) + scale_fill_manual(values = c("blue", "green"))
 
-## ----echo = FALSE, out.width="700px", out.height="700px"----------------------
+## ---- echo = FALSE, out.width="700px", out.height="700px"---------------------
 knitr::include_graphics("data/rhoplot1.png")
 
-## ----eval = FALSE, fig.dim = c(7,6), echo = FALSE-----------------------------
+## ---- eval = FALSE, fig.dim = c(7,6), echo = FALSE----------------------------
 #  rhoplot1
 
-## ----echo = FALSE, out.width="700px", out.height="700px"----------------------
+## ---- echo = FALSE, out.width="700px", out.height="700px"---------------------
 knitr::include_graphics("data/rhoplot2.png")
 
-## ----eval = FALSE, fig.dim = c(7,6), echo = FALSE-----------------------------
+## ---- eval = FALSE, fig.dim = c(7,6), echo = FALSE----------------------------
 #  rhoplot2
 
-## ----message=FALSE, warning=FALSE,eval=FALSE, results='hide', silent=TRUE-----
+## ---- message=FALSE, warning=FALSE,eval=FALSE, results='hide', silent=TRUE----
 #  kvals <- c(0.1, 0.2, 0.4, 0.8, 1.6, 3.2)
 #  #parvals <- cbind(rep(0.3, 6), rep(-1, 6), kvals)
 #  parvals <- cbind(rep(-0.3, 6), rep(3, 6), kvals)
@@ -125,29 +125,29 @@ knitr::include_graphics("data/rhoplot2.png")
 #  rhovarplot <- ggplot(rhovarplot_data) + geom_area(aes(x = Variance, y = Density), color = "blue", fill = "blue", alpha = 0.3, position = "identity") + geom_vline(xintercept = 0.2, color = "green", linetype = "dashed", linewidth = 0.8) + facet_wrap(vars(k), nrow = 2, ncol = 3) + scale_x_continuous(sec.axis = sec_axis(~., name = "k", breaks = NULL, labels = NULL))
 #  rhomeanplot <- ggplot(rhomeanplot_data) + geom_area(aes(x = Expectation, y = Density), color = "blue", fill = "blue", alpha = 0.3, position = "identity") + geom_vline(xintercept = 0, color = "green", linetype = "dashed", linewidth = 0.8) + facet_wrap(vars(k), nrow = 2, ncol = 3) + scale_x_continuous(sec.axis = sec_axis(~., name = "k", breaks = NULL, labels = NULL))
 
-## ----echo = FALSE, out.width="600px", out.height = "500px"--------------------
+## ---- echo = FALSE, out.width="600px", out.height = "500px"-------------------
 knitr::include_graphics("data/rhovarplot.png")
 
-## ----eval = FALSE, echo = FALSE-----------------------------------------------
+## ---- eval = FALSE, echo = FALSE----------------------------------------------
 #  rhovarplot
 
-## ----echo = FALSE, out.width = "600px", out.height = "500px"------------------
+## ---- echo = FALSE, out.width = "600px", out.height = "500px"-----------------
 knitr::include_graphics("data/rhomeanplot.png")
 
-## ----eval=FALSE, fig.dim = c(8,5), echo = FALSE-------------------------------
+## ---- eval=FALSE, fig.dim = c(8,5), echo = FALSE------------------------------
 #  rhomeanplot
 
-## ----eval = FALSE, message = FALSE, warning = FALSE, silent = TRUE, results = 'hide'----
+## ---- eval = FALSE, message = FALSE, warning = FALSE, silent = TRUE, results = 'hide'----
 #  fit_cor <- rstan::sampling(cor_pri_st, data = list(cor_p=c(0.25, 3, 4), iter = 2000, chains=4))
 #  ex.fit <- rstan::extract(fit_cor)
 #  rhoplot_data  <- data.frame(ex.fit$rho[,1,1,2])
 #  names(rhoplot_data) <- "rho"
 #  rhoplot <- ggplot(rhoplot_data) + geom_histogram(aes(x = rho), color = "blue", fill = "blue", alpha = 0.3, binwidth = 0.05) + scale_x_continuous(bquote(rho))
 
-## ----echo = FALSE, out.width = "400px", out.height = "400px"------------------
+## ---- echo = FALSE, out.width = "400px", out.height = "400px"-----------------
 knitr::include_graphics("data/rhoplot.png")
 
-## ----eval = FALSE, echo = FALSE, warning = FALSE, fig.dim = c(4,3)------------
+## ---- eval = FALSE, echo = FALSE, warning = FALSE, fig.dim = c(4,3)-----------
 #  rhoplot
 
 ## ----eval=FALSE,message=FALSE, warning = FALSE, results = 'hide',silent=TRUE----
@@ -167,9 +167,9 @@ knitr::include_graphics("data/rhoplot.png")
 #               priors=priors,
 #               sam_priors = prior_density)
 
-## ----eval = FALSE, fig.dim = c(7, 6)------------------------------------------
+## ---- eval = FALSE, fig.dim = c(7, 6)-----------------------------------------
 #  plot(samples)
 
-## ----echo = FALSE, out.height="500px", out.width="800px"----------------------
+## ---- echo = FALSE, out.height="500px", out.width="800px"---------------------
 knitr::include_graphics("data/p_priors_beta_conj.png")
 
